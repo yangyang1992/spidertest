@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<selector xmlns="http://selector.css.com.cn" namespace="com.ry.spidertest.selector.GetArticleSelector">
+    <select id="getArticle" paramType="string" resultType="org.jsoup.select.Elements">
+        <css-selector>
+            html body div#wrapper div.content_read div#neirongDiv.box_con div#zjneirong
+        </css-selector>
+    </select>
+</selector>

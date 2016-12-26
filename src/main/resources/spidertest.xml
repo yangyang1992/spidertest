@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<craweler xmlns="http://craweler.jspider.com.cn">
+    <taskWorker id="catchArticle" maxTaskNum="100" charset="UTF-8">
+        <filterChain>
+            <filter name="getHtml" class="com.ry.spidertest.filter.GetHtmlFilter" selectors="false"/>
+            <filter name="getImage" class="com.ry.spidertest.filter.GetArticleFilter" selectors="true"/>
+            <filter name="getText" class="com.ry.spidertest.filter.CatchTextFilter" selectors="false"/>
+        </filterChain>
+        <httpConfig>
+            <requestConfig connectionRequestTimeout="100000" connectTimeout="100000" socketTimeout="100000"/>
+            <header Accept="Accept text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                    Connection="keep-alive" User-Agent="Mozilla/5.0 (Windows NT 6.1; rv:6.0.2) Gecko/20100101 Firefox/6.0.2"/>
+        </httpConfig>
+    </taskWorker>
+    <taskWorker id="catchTask" maxTaskNum="100" charset="UTF-8">
+        <filterChain>
+            <filter name="getHtml" class="com.ry.spidertest.filter.GetHtmlFilter" selectors="false"/>
+            <filter name="catchTask" class="com.ry.spidertest.filter.CatchTaskFilter" selectors="true"/>
+        </filterChain>
+        <httpConfig>
+            <requestConfig connectionRequestTimeout="10000" connectTimeout="10000" socketTimeout="10000"/>
+            <header Accept="Accept text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+                    Connection="keep-alive" User-Agent="Mozilla/5.0 (Windows NT 6.1; rv:6.0.2) Gecko/20100101 Firefox/6.0.2"/>
+        </httpConfig>
+    </taskWorker>
+    <selectors>
+        <selector>getarticle.xml</selector>
+        <selector>catchtask.xml</selector>
+    </selectors>
+</craweler>

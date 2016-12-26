@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<selector xmlns="http://selector.css.com.cn" namespace="com.ry.spidertest.selector.CatchTaskSelector">
+    <select id="catchTask" paramType="string" resultType="org.jsoup.select.Elements">
+        <css-selector>
+            html body div#wrapper div.box_con div#list dl dd a
+        </css-selector>
+    </select>
+</selector>
