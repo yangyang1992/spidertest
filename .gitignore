@@ -6,3 +6,4 @@ target
 .project
 auth
 jspider_log/
+src/test/
